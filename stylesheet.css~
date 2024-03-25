@@ -1,0 +1,23 @@
+/* 
+Style Sheet for Vehicle Log
+Autho: Ignacio Gonzalez
+*/
+
+h1 {
+	text-align: center;
+	background-color: skyblue;
+}
+
+h2 {
+	color: green;
+}
+p {
+	
+}
+
+main p {
+	text-indent: 2em;
+	margin-left: 5em;
+	margin-right: 5em;
+}
+

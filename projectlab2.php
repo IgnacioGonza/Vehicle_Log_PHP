@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+
+    <title>Vehicle Log</title>
+
+</head>
+<body>
+<main>
+    <h1>Tables</h1>
+
+<ul>
+	<li><a href="index.php">Home</a></li>
+	<li><a class="active" href="projectlab2.php">Records</a></li>
+	<li><a href="projectlab3.php">Add</a></li>
+	<li><a href="projectlab4.php">Edit</a></li>
+	<li><a href="reports.php">Reports</a></li>
+	<li><a href="about.php">About</a></li>
+</ul>
+
+<p><a href = "admin/show_user.php" title="Data Table - Users">Users Table</a>
+<p><a href = "show_fuel.php" title="Data Table - Fuel">Fuel Table</a>
+<p><a href = "show_maintenance.php" title="Data Table - Maintenance">Maintenance Table</a>
+<p><a href = "show_maintenance_type.php" title="Data Table - Maintenance Type">Maintenance Type Table</a>
+<p><a href = "show_vehicle.php" title="Data Table - Vehicle">Vehicles Table</a>
+
+</main>
+</body>
+</html>		
+		
+

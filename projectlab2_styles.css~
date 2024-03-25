@@ -1,0 +1,28 @@
+/* 
+Style Sheet for Vehicle Log Project Lab 2
+Autho: Ignacio Gonzalez
+*/
+
+table {
+	padding: 2px;
+}
+
+th, td {
+	border: solid 1px black;
+	padding: 5px;
+}
+
+th {
+	background-color: blue;
+	color: white;
+}
+tr:hover {
+	color: white;
+	background-color: darkblue;
+}
+
+h1 {
+	text-align: center;
+	background-color: skyblue;
+	border: solid;
+}

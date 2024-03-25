@@ -1,0 +1,58 @@
+<?php
+	require ('config.php');
+	
+//Running a query for getting the data from the specified table
+	$query = 'SELECT * FROM maintenance_type' ;
+	$statement = $db->prepare ($query);
+	$statement->execute();
+	$maintenanceTypes = $statement->fetchAll();
+	$statement -> closeCursor();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+<title>Data Editing</title>
+
+</head>
+<body>
+<main>
+
+<h1>Maintenance Type - Edit</h1>
+<ul>
+	<li><a href="index.php">Home</a></li>
+	<li><a href="projectlab2.php">Records</a></li>
+	<li><a href="projectlab3.php">Add</a></li>
+	<li><a class="active" href="projectlab4.php">Edit</a></li>
+	<li><a href="reports.php">Reports</a></li>
+	<li><a href="about.php">About</a></li>
+</ul>
+	<center>	 
+      <table cellspacing=0 cellpadding=5 border=0> 
+    	<tr> 
+		<th> Maintenance Type Id </th>
+		<th> Maintenance Type </th>
+		<th> </th>
+	</tr>	
+	<?php foreach($maintenanceTypes as $maintenanceType) : ?> <!-- Foreach statement that gets the data from the database and fills the table with that data -->
+	<tr>
+
+		<td><?php echo $maintenanceType['maintenance_type_id']; ?></td>
+		<td><?php echo $maintenanceType['maintenance_type']; ?></td>
+	
+		<td>
+		<form action = "edit_data/edit_maintenance_type_form.php" method="post" id="edit_maintenance_type">
+		<input type="hidden" name="maintenance_type_id" value="<?php echo $maintenanceType['maintenance_type_id']; ?>">
+		<input type="submit" value="Edit Maintenance Type">
+		</form>
+		</td>
+
+	</tr>
+	<?php endforeach; ?>
+      </table>
+	</center>
+ 
+</main>
+</body>
+</html>

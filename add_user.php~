@@ -1,0 +1,20 @@
+<?php
+	require ('config.php');
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Data Entry for Users</title>
+
+</head>
+<body>
+<main>
+<h1>Data Entry for Users Table</h1>
+
+      
+<p><b><a href = "index.php" title="Return to main page">RETURN</a><b></p>
+</main>
+</body>
+</html>

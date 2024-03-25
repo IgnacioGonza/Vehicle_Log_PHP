@@ -1,0 +1,24 @@
+/* 
+Style Sheet for Vehicle Log Project Lab 3
+Autho: Ignacio Gonzalez
+*/
+h1 {
+	text-align: center;
+	background-color: skyblue;
+	border: solid;
+}
+
+h2 {
+	color: green;
+	font-size: 1.3em;
+	text-decoration: underline;
+	
+}
+
+main {
+	margin-top: 0em;
+	margin-right: 5em; 
+	margin-bottom: 5em;
+	margin-left: 2em;
+}
+

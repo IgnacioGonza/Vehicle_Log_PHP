@@ -1,0 +1,132 @@
+<?php
+	require ('config.php');
+	
+	$vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
+
+//Running queries for getting the data from the specified tables
+
+	$query = "SELECT * FROM vehicles WHERE vehicle_id = :vehicle_id" ;
+	$statement = $db->prepare ($query);
+	$statement->bindValue(':vehicle_id', $vehicle_id);
+	$statement->execute();
+	$vehicles = $statement->fetchAll();
+	$statement -> closeCursor();
+
+	$query2 = 'SELECT * FROM maintenance WHERE vehicle_id = :vehicle_id' ;
+	$statement2 = $db->prepare ($query2);
+	$statement2->bindValue(':vehicle_id', $vehicle_id);
+	$statement2->execute();
+	$maintenances = $statement2->fetchAll();
+	$statement2 -> closeCursor();
+
+	$query3 = 'SELECT * FROM fuel WHERE vehicle_id = :vehicle_id' ;
+	$statement3 = $db->prepare ($query3);
+	$statement3->bindValue(':vehicle_id', $vehicle_id);
+	$statement3->execute();
+	$fuels = $statement3->fetchAll();
+	$statement3 -> closeCursor();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+
+    <title>Vehicle Log</title>
+
+</head>
+<body>
+<main>
+    <h1>Vehicles - Reports</h1>
+<ul>
+	<li><a href="index.php">Home</a></li>
+	<li><a href="projectlab2.php">Records</a></li>
+	<li><a href="projectlab3.php">Add</a></li>
+	<li><a href="projectlab4.php">Edit</a></li>
+	<li><a class="active" href="reports.php">Reports</a></li>
+	<li><a href="about.php">About</a></li>
+</ul>
+
+<h2>Vehicle Information:</h2>
+
+      <table>
+    	<tr> 
+		<th> Vehicle Type</th>
+		<th> Vehicle Model </th>
+		<th> Vehicle Year </th>
+		<th> Vehicle Year Purchased </th>
+		<th> Vehicle Color </th>
+		<th> Vehicle VIN </th>
+		<th> Vehicle License Tag </th>
+		<th> Vehicle License State </th>
+		<th> Vehicle Purchase Price </th>
+		<th> Vehicle Mileage </th>
+
+	</tr>	
+	<?php foreach($vehicles as $vehicle) : ?>
+	<tr>
+	        <td><?php echo $vehicle['vehicle_type']; ?></td>
+	        <td><?php echo $vehicle['vehicle_model']; ?></td>
+	        <td><?php echo $vehicle['vehicle_year']; ?></td>
+	        <td><?php echo $vehicle['vehicle_year_purchased']; ?></td>
+	        <td><?php echo $vehicle['vehicle_color']; ?></td>
+	        <td><?php echo $vehicle['vehicle_VIN']; ?></td>
+	        <td><?php echo $vehicle['vehicle_license_tag']; ?></td>
+	        <td><?php echo $vehicle['vehicle_license_state']; ?></td>
+	        <td><?php echo $vehicle['vehicle_purchase_price']; ?></td>
+	        <td><?php echo $vehicle['vehicle_purchase_mileage']; ?></td>
+	</tr>
+	<?php endforeach; ?>
+      </table>
+<h2>Maintenances for the vehicle:</h2>
+      <table>
+    	<tr> 
+		<th> Maintenance Type Id </th>
+		<th> Maintenance Vendor </th>
+		<th> Maintenance Description </th>
+		<th> Maintenance Vendor address </th>
+		<th> Maintenance Cost </th>
+		<th> Maintenance Mileage </th>
+		<th> Maintenance Date </th>
+		<th> Maintenance Date Modified </th>
+	</tr>	
+	<?php foreach($maintenances as $maintenance) : ?>
+	<tr>
+		<td><?php echo $maintenance['maintenance_type_id']; ?></td>
+		<td><?php echo $maintenance['maintenance_vendor']; ?></td>
+		<td><?php echo $maintenance['maintenance_description']; ?></td>
+		<td><?php echo $maintenance['maintenance_vendor_address']; ?></td>
+		<td><?php echo $maintenance['maintenance_cost']; ?></td>
+		<td><?php echo $maintenance['maintenance_mileage']; ?></td>
+		<td><?php echo $maintenance['maintenance_date']; ?></td>
+		<td><?php echo $maintenance['maintenance_date_modified']; ?></td>
+	</tr>
+	<?php endforeach; ?>
+      </table>
+
+<h2>Fuels used:</h2>
+	<table>
+    	<tr> 
+		<th> Fuel Source </th>
+		<th> Fuel Gallons </th>
+		<th> Fuel Cost </th>
+		<th> Fuel Mileage </th>
+		<th> Fuel Date </th>
+		<th> Fuel Date Modified </th>
+	</tr>	
+	<?php foreach($fuels as $fuel) : ?>
+	<tr>
+		<td><?php echo $fuel['fuel_source']; ?></td>
+		<td><?php echo $fuel['fuel_gallons']; ?></td>
+		<td><?php echo $fuel['fuel_cost']; ?></td>
+		<td><?php echo $fuel['fuel_mileage']; ?></td>
+		<td><?php echo $fuel['fuel_date']; ?></td>
+		<td><?php echo $fuel['fuel_date_modified']; ?></td>
+	</tr>
+	<?php endforeach; ?>
+      </table>
+
+	
+</main>
+</body>
+</html>	
