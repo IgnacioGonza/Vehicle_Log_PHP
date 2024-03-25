@@ -1,0 +1,41 @@
+<?php
+	
+
+	$vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+
+<title>Confirmation page</title>
+
+</head>
+<body>
+<main>
+<h1>Confirmation</h1>
+    
+<center>
+
+<p>Are you sure you want to delete this record?<p>
+
+
+<form action = "delete_vehicle.php" method="post" id="delete_vehicle">
+
+<input type="hidden" name="vehicle_id" value="<?php echo $vehicle_id['vehicle_id']; ?>"
+
+<label>&nbsp;</label>
+<input type="submit" value="Delete Vehicle">
+
+
+</form>
+
+</center>
+
+<p><b><a href = "delete_vehicle_form.php" title="Return">RETURN</a></b></p>
+
+</main>
+</body>
+</html>	

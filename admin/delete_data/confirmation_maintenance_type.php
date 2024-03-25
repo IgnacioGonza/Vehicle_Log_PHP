@@ -1,0 +1,41 @@
+<?php
+	
+
+	$maintenance_type_id = filter_input(INPUT_POST, 'maintenance_type_id');
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+
+<title>Confirmation page</title>
+
+</head>
+<body>
+<main>
+<h1>Confirmation</h1>
+    
+<center>
+
+<p>Are you sure you want to delete this record?<p>
+
+
+<form action = "delete_maintenance_type.php" method="post" id="maintenance_type">
+
+<input type="hidden" name="maintenance_type_id" value="<?php echo $maintenance_type_id['maintenance_type_id']; ?>"
+
+<label>&nbsp;</label>
+<input type="submit" value="Delete Maintenance Type">
+
+
+</form>
+
+</center>
+
+<p><b><a href = "delete_maintenance_type_form.php" title="Return">RETURN</a></b></p>
+
+</main>
+</body>
+</html>	
