@@ -2,3 +2,4 @@
 
 > We were assigned to buld a website in which customers and their vehicle services can be tracked. A sql databse was also created to hold all the data.
 
+vehicle_log.sql --> holds database tables and variables to be used
