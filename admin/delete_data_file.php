@@ -1,0 +1,42 @@
+<?php
+	require ('config.php');
+	
+
+	$query = 'SELECT * FROM users' ;
+	$statement = $db->prepare ($query);
+	$statement->execute();
+	$users = $statement->fetchAll();
+	$statement -> closeCursor();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+<title>Data Deleting</title>
+
+</head>
+<body>
+<main>
+
+<h1>Data Delete</h1>
+<ul>
+	<li><a href="index.php">Home</a></li>
+	<li><a href="../projectlab2.php">Records</a></li>
+	<li><a href="../projectlab3.php">Add</a></li>
+	<li><a href="../projectlab4.php">Edit</a></li>
+	<li><a class="active" href="delete_data_file.php">Delete</a><li>
+	<li><a href="reports.php">Reports</a></li>
+	<li><a href="../about.php">About</a></li>
+</ul>
+
+<p><a href = "delete_data/delete_user_form.php" title="Data Delete form - Users">Data Delete for Users Table</a>
+<p><a href = "delete_data/delete_fuel_form.php" title="Data Delete form - Fuel">Data Delete for Fuel Table</a>
+<p><a href = "delete_data/delete_maintenance_form.php" title="Data Delete form - Maintenance">Data Delete for Maintenance Table</a>
+<p><a href = "delete_data/delete_maintenance_type_form.php" title="Data Delete form - Maintenance Type">Data Delete for Maintenance Type Table</a>
+<p><a href = "delete_data/delete_vehicle_form.php" title="Data Delete form - Vehicle">Data Delete for Vehicle Table</a>
+
+  
+</main>
+</body>
+</html>
