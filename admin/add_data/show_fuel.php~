@@ -1,0 +1,57 @@
+<?php
+	require ('config.php');
+	
+
+	$query = 'SELECT * FROM fuel' ;
+	$statement = $db->prepare ($query);
+	$statement->execute();
+	$fuels = $statement->fetchAll();
+	$statement -> closeCursor();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+
+    <title>Vehicle Log</title>
+
+</head>
+<body>
+<main>
+    <h1>Fuel List</h1>
+<ul>
+	<li><a href="../index.php">Home</a></li>
+	<li><a class="active"href="projectlab2.php">Records</a></li>
+	<li><a href="../projectlab3.php">Add</a></li>
+	<li><a href="../projectlab4.php">Edit</a></li>
+	<li><a href="../delete_data_file.php">Delete</a><li>
+	<li><a href="../about.php">About</a></li>
+</ul>
+      <table>
+    	<tr> 
+		<th> Fuel Id </th>
+		<th> Vehicle Id </th>
+		<th> Fuel Source </th>
+		<th> Fuel Gallons </th>
+		<th> Fuel Cost </th>
+		<th> Fuel Mileage </th>
+		<th> Fuel Date </th>
+		<th> Fuel Date Modified </th>
+	</tr>	
+	<?php foreach($fuels as $fuel) : ?>
+	<tr>
+	        <td><?php echo $fuel['fuel_id']; ?></td>
+		<td><?php echo $fuel['vehicle_id']; ?></td>
+		<td><?php echo $fuel['fuel_source']; ?></td>
+		<td><?php echo $fuel['fuel_gallons']; ?></td>
+		<td><?php echo $fuel['fuel_cost']; ?></td>
+		<td><?php echo $fuel['fuel_mileage']; ?></td>
+		<td><?php echo $fuel['fuel_date']; ?></td>
+		<td><?php echo $fuel['fuel_date_modified']; ?></td>
+	</tr>
+	<?php endforeach; ?>
+      </table>
+</main>
+</body>
+</html>	
