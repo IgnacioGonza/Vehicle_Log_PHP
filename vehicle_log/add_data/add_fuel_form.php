@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href = "projectlab2Styles.css" rel = "stylesheet" type = "text/css" />
+
+    <title>Data Entry</title>
+
+</head>
+<body>
+<main>
+<h1>Data Entry</h1>
+<ul>
+	<li><a href="../index.php">Home</a></li>
+	<li><a href="../projectlab2.php">Records</a></li>
+	<li><a class="active" href="../projectlab3.php">Add</a></li>
+	<li><a href="../projectlab4.php">Edit</a></li>
+	<li><a href="../reports.php">Reports</a></li>
+	<li><a href="../about.php">About</a></li>
+</ul>
+<p><h2>Data Entry for Fuel Table</h2></p>
+
+<table cellspacing="0" cellpadding="5">
+
+<!-- A simple Form which uses the post method when submitted-->
+<form action = "add_fuel.php" method="post" id="add_fuel">
+
+<tr>
+<td><label>Vehicle ID</labe></td>
+<td><input type="text" name="vehicle_id"></td>
+</tr>
+
+<tr>
+<td><label>Source</labe></td>
+<td><input type="text" name="fuel_source"></td>
+</tr>
+
+<tr>
+<td><label>Gallons</labe></td>
+<td><input type="text" name="fuel_gallons"></td>
+</tr>
+
+<tr>
+<td><label>Cost</labe></td>
+<td><input type="text" name="fuel_cost"></td>
+</tr>
+
+<tr>
+<td><label>Mileage</labe></td>
+<td><input type="text" name="fuel_mileage"></td>
+</tr>
+
+<tr>
+<td><label>Date</labe></td>
+<td><input type="text" name="fuel_date"></td>
+</tr>
+
+<tr>
+<td><label>&nbsp;</label></td>
+<td><input type="submit" value="Add Fuel"></td>
+</tr>
+
+
+</form>
+
+</table>
+  
+</main>
+</body>
+</html>
